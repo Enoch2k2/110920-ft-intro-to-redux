@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { addBook } from '../actions';
+import { createBook } from '../actions';
 
 class Form extends Component {
   state = {
@@ -17,7 +17,7 @@ class Form extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.addBook(this.state);
+    this.props.createBook(this.state);
   }
 
   render() {
@@ -40,7 +40,7 @@ class Form extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addBook: (book) => dispatch(addBook(book))
+    createBook: (book) => dispatch(createBook(book))
   }
 }
 
